@@ -13,7 +13,6 @@
 
 		if (response.ok) {
 			items = await response.json();
-			console.debug(items);
 		} else {
 			alert("HTTP-Error: " + response.status);
 		}
