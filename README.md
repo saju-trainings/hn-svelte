@@ -1,4 +1,4 @@
-# Svelte + Vite
+# HackerNews in svelte
 
 This template should help get you started developing with Svelte in Vite.
 
