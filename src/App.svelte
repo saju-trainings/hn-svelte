@@ -2,6 +2,7 @@
   import Header from "./lib/Header.svelte";
   import New from "./pages/New.svelte";
   import Past from "./pages/Past.svelte";
+  import CreateUser from "./pages/CreateUser.svelte";
   
   let currentPage = 'new';
 </script>
@@ -14,6 +15,8 @@
     <New />
   {:else if currentPage === 'past'}
     <Past />
+  {:else if currentPage === 'create-user'}
+    <CreateUser />
   {/if}
 </main>
 

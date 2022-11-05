@@ -8,7 +8,8 @@
 		page("/", () => { currentPage = 'new' });
 		page("/past", () => { currentPage = 'past' });
 		page("/comments", () => { currentPage = 'comments' });
-		page("/ask", () => { currentPaeg = 'ask' });
+		page("/ask", () => { currentPage = 'ask' });
+		page("/create-user", () => { currentPage = 'create-user' });
 		page();
 	}
 	
@@ -22,6 +23,7 @@
 	<a href="/past">past</a>
 	<span on:click={() => (currentPage = "comments")}>comments</span>
 	<span on:click={() => (currentPage = "ask")}>ask</span>
+	<a href="/create-user">create user</a>
 </nav>
 
 <style>
