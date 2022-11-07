@@ -11,6 +11,7 @@
 		page("/ask", () => { currentPage = 'ask' });
 		page("/create-user", () => { currentPage = 'create-user' });
 		page("/users", () => { currentPage = 'users' });
+		page("/users/:id", () => { currentPage = 'user' });
 		page();
 	}
 	

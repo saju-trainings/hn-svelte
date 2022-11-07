@@ -4,15 +4,16 @@
 
 <script>
 	import { onMount } from "svelte";
-	import NewsItemSummary from "../lib/NewsItemSummary.svelte";
-	let items = [];
+  import UserSummary from "../lib/UserSummary.svelte";
+	let users = [];
 
 	onMount(async () => {
-		const url = "https://api.hackerwebapp.com/news";
+		const url = "https://reqres.in/api/users";
 		const response = await fetch(url);
 
 		if (response.ok) {
-			items = await response.json();
+			const json = await response.json();
+			users = json.data;
 		} else {
 			alert("HTTP-Error: " + response.status);
 		}
@@ -21,14 +22,14 @@
 
 <h2>Users</h2>
 
-{#each items as item}
-  <div class="news-item-container">
-		<NewsItemSummary {item}/>
+{#each users as user}
+  <div class="user-item-container">
+		<UserSummary {user}/>
 	</div>
 {/each}
 
 <style>
-	.news-item-container {
+	.user-item-container {
 		padding: .5rem;
 	}
 </style>

@@ -18,9 +18,9 @@
 
 		if (response.ok) {
 			const createdUser = await response.json();
-			console.debug({createdUser})
+			console.debug({ createdUser });
 			user = {};
-			message = 'Success! User created succesfully';
+			message = "Success! User created succesfully";
 		} else {
 			alert("HTTP-Error: " + response.status);
 		}
@@ -39,31 +39,44 @@
 	<title>Hacker News - Svelte - Create User</title>
 </svelte:head>
 
-<h2>Create User</h2>
+<h2 class="is-size-2">Create User</h2>
 
-<form on:submit|preventDefault={handleSubmit}>
-	Name:
-	<input type="text" bind:value={user.name} required />
+<div class="container is-max-desktop">
+	<form on:submit|preventDefault={handleSubmit}>
+		<div class="field">
+			<label class="label" for="name">Name</label>
+			<div class="control">
+				<input
+					type="text"
+					id="name"
+					class="input"
+					bind:value={user.name}
+					required
+				/>
+			</div>
+		</div>
 
-	Job:
-	<input type="text" bind:value={user.job} required />
+		<div class="field">
+			<label class="label">Job</label>
+			<div class="control">
+				<input type="text" class="input" bind:value={user.job} required />
+			</div>
+		</div>
 
-	<button type="submit">Create</button>
-</form>
+		<button type="submit" class="button is-primary">Create</button>
+	</form>
 
-{#if message}
-	<div class="message">{message}</div>
-{/if}
+	{#if message}
+		<div class="message is-success">
+			<div class="message-body">
+				{message}
+			</div>
+		</div>
+	{/if}
 
-{#if loading}
-	<div class="message">loading</div>
-{/if}
-
-<style>
-	.message {
-		background: green;
-		color: white;
-		padding: .5rem;
-		margin: .5rem 0;
-	}
-</style>
+	{#if loading}
+		<div class="message is-dark">
+			<div class="message-body">Loading..</div>
+		</div>
+	{/if}
+</div>
