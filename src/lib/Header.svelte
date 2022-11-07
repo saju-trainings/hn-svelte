@@ -10,6 +10,7 @@
 		page("/comments", () => { currentPage = 'comments' });
 		page("/ask", () => { currentPage = 'ask' });
 		page("/create-user", () => { currentPage = 'create-user' });
+		page("/users", () => { currentPage = 'users' });
 		page();
 	}
 	
@@ -24,6 +25,7 @@
 	<span on:click={() => (currentPage = "comments")}>comments</span>
 	<span on:click={() => (currentPage = "ask")}>ask</span>
 	<a href="/create-user">create user</a>
+	<a href="/users">users</a>
 </nav>
 
 <style>
