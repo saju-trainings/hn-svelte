@@ -1,10 +1,6 @@
-<svelte:head>
-  <title>Hacker News - Svelte - New</title>
-</svelte:head>
-
 <script>
 	import { onMount } from "svelte";
-  import UserSummary from "../lib/UserSummary.svelte";
+	import UserSummary from "../lib/UserSummary.svelte";
 	let users = [];
 
 	onMount(async () => {
@@ -20,16 +16,22 @@
 	});
 </script>
 
-<h2>Users</h2>
+<svelte:head>
+	<title>Hacker News - Svelte - New</title>
+</svelte:head>
 
-{#each users as user}
-  <div class="user-item-container">
-		<UserSummary {user}/>
-	</div>
-{/each}
+<div class="container is-max-desktop">
+	<h2 class="is-size-2">Users</h2>
+
+	{#each users as user}
+		<div class="user-item-container">
+			<UserSummary {user} />
+		</div>
+	{/each}
+</div>
 
 <style>
 	.user-item-container {
-		padding: .5rem;
+		padding: 0.5rem;
 	}
 </style>

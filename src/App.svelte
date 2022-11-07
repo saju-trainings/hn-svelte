@@ -10,7 +10,6 @@
 </script>
 
 <main>
-  <h1>Hacker News - Svelte</h1>
   <Header bind:currentPage={currentPage}/>
   
   {#if currentPage === 'new'}

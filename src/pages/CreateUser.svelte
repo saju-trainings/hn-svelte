@@ -39,9 +39,8 @@
 	<title>Hacker News - Svelte - Create User</title>
 </svelte:head>
 
-<h2 class="is-size-2">Create User</h2>
-
 <div class="container is-max-desktop">
+	<h2 class="is-size-2">Create User</h2>
 	<form on:submit|preventDefault={handleSubmit}>
 		<div class="field">
 			<label class="label" for="name">Name</label>
