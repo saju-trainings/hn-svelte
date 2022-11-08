@@ -3,6 +3,7 @@
 	import { onMount } from "svelte";
 
 	export let currentPage = "new";
+	export let id;
 
 	function init() {
 		page("/", () => {
@@ -23,7 +24,8 @@
 		page("/users", () => {
 			currentPage = "users";
 		});
-		page("/users/:id", () => {
+		page("/users/:id", (event) => {
+			id = event.params.id;
 			currentPage = "user";
 		});
 		page();
@@ -56,13 +58,4 @@
 </nav>
 
 <style>
-	nav {
-		background-color: lightblue;
-		padding: 0.5rem;
-	}
-
-	span {
-		padding: 0.5rem;
-		cursor: pointer;
-	}
 </style>

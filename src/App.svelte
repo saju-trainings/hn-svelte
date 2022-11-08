@@ -7,10 +7,11 @@
   import User from "./pages/User.svelte";
   
   let currentPage = 'new';
+  let id;
 </script>
 
 <main>
-  <Header bind:currentPage={currentPage}/>
+  <Header bind:currentPage={currentPage} bind:id={id}/>
   
   {#if currentPage === 'new'}
     <New />
@@ -21,7 +22,7 @@
   {:else if currentPage === 'users'}
     <Users />
   {:else if currentPage === 'user'}
-    <User />
+    <User {id} />
   {/if}
 </main>
 
